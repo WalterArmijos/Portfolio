@@ -131,6 +131,17 @@
             transform: rotate(-45deg) translate(5px, -5px);
         }
     }
+        // Get the hamburger and nav-links elements
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+// Add a click event listener to the hamburger
+hamburger.addEventListener('click', () => {
+    // Toggle the 'active' class for both the hamburger and nav-links
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
 
         /* Hero Section */
         .hero {
@@ -540,6 +551,11 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             </div>
         </nav>
         <div class="hero-content container">
