@@ -270,6 +270,18 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s;
         }
+        .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
 
         .project-card img {
             width: 100%;
@@ -439,7 +451,7 @@
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884931-3df622c5-a426-4357-ae5d-44da31a7bf04.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwODg0MzgsIm5iZiI6MTcyOTA4ODEzOCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0OTMxLTNkZjYyMmM1LWE0MjYtNDM1Ny1hZTVkLTQ0ZGEzMWE3YmYwNC5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MTAxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDEwMTZUMTQxNTM4WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MTFkNjhhYzZlMWIzYzAzYzg2NzQxOWZhM2I3N2IyYTY2NjY2OWNjMjRlODAyYTY5NWQ4MmU0NDk3ZTY0YmJlYyZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.NpVqd9qgFJlS-4g-wFQDetuiotLz4Szor0X3JIenDMI" alt="Walter's portrait">
+                    <img src="https://private-user-images.githubusercontent.com/185145096/376884931-3df622c5-a426-4357-ae5d-44da31a7bf04.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwODg0MzgsIm5iZiI6MTcyOTA4ODEzOCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0OTMxLTNkZjYyMmM1LWE0MjYtNDM1Ny1hZTVkLTQ0ZGEzMWE3YmYwNC5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MTAxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDEwMTZUMTQxNTM4WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MTFkNjhhYzZlMWIzYzAzYzg2NzQxOWZhM2I3N2IyYTY2NjY2OWNjMjRlODAyYTY5NWQ4MmU0NDk3ZTY0YmJlYyZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.NpVqd9qgFJlS-4g-wFQDetuiotLz4Szor0X3JIenDMI" alt="Walter's portrait"class="responsive-image">
                 </div>
             </div>
         </div>
@@ -479,7 +491,7 @@
             <h2>Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884890-d19dec53-58b0-46aa-8783-008ad2721eb0.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwODg0MzgsIm5iZiI6MTcyOTA4ODEzOCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0ODkwLWQxOWRlYzUzLTU4YjAtNDZhYS04NzgzLTAwOGFkMjcyMWViMC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQxNDE1MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hNWZmNDA4NmRiNTNmZmYwOTg4ODRmOTdkY2JhZWEyNTg5NTA0ZGVlOGUxZTI3MjM3MGZhMmRiODQzZjM1NzRmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.CJWjA_RCud7uKCkZSH_yF5uvLV2Ey6DjzEIKzDSnMiI" alt="Esthelas Cleaning Service">
+                    <img src="https://private-user-images.githubusercontent.com/185145096/376884890-d19dec53-58b0-46aa-8783-008ad2721eb0.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwODg0MzgsIm5iZiI6MTcyOTA4ODEzOCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0ODkwLWQxOWRlYzUzLTU4YjAtNDZhYS04NzgzLTAwOGFkMjcyMWViMC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQxNDE1MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hNWZmNDA4NmRiNTNmZmYwOTg4ODRmOTdkY2JhZWEyNTg5NTA0ZGVlOGUxZTI3MjM3MGZhMmRiODQzZjM1NzRmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.CJWjA_RCud7uKCkZSH_yF5uvLV2Ey6DjzEIKzDSnMiI" alt="Esthelas Cleaning Service" class="responsive-image">
                     <div class="project-overlay">
                         <h3>Esthelas Cleaning Service</h3>
                         <p>A clean and user-friendly website that showcased this NJ-based residential cleaning company's services and also improved their lead conversion significantly.</p>
@@ -487,7 +499,7 @@
                     </div>     
                 </div>
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884778-87c658a9-dd54-4dd5-9084-2f07e0477717.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwODg0MzgsIm5iZiI6MTcyOTA4ODEzOCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0Nzc4LTg3YzY1OGE5LWRkNTQtNGRkNS05MDg0LTJmMDdlMDQ3NzcxNy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQxNDE1MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hZjQ3Yjg5ZTFiY2NkNDZiMDU5NTI1NTRhZmRkMWYzNDdhMTFjYWI2YmI2ZWMyMjlmMTI4YzI2MTAyODAzMzc2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.v8AK8EvGxbQ7IhhC6_cQWeGLwShzaPM-9n4oeC-4uV8" alt="Growth Springs Eternal">
+                    <img src="https://private-user-images.githubusercontent.com/185145096/376884778-87c658a9-dd54-4dd5-9084-2f07e0477717.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwODg0MzgsIm5iZiI6MTcyOTA4ODEzOCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0Nzc4LTg3YzY1OGE5LWRkNTQtNGRkNS05MDg0LTJmMDdlMDQ3NzcxNy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQxNDE1MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hZjQ3Yjg5ZTFiY2NkNDZiMDU5NTI1NTRhZmRkMWYzNDdhMTFjYWI2YmI2ZWMyMjlmMTI4YzI2MTAyODAzMzc2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.v8AK8EvGxbQ7IhhC6_cQWeGLwShzaPM-9n4oeC-4uV8" alt="Growth Springs Eternal"class="responsive-image">
                     <div class="project-overlay">
                         <h3>Growth Springs Eternal</h3>
                         <p>A visually engaging site that emphasizes expertise and builds trust for prospective clients looking for professional development guidance.</p>
@@ -495,7 +507,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376885010-6d9a9714-6668-43b7-810f-2f9ae59a97c2.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwODg0MzgsIm5iZiI6MTcyOTA4ODEzOCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg1MDEwLTZkOWE5NzE0LTY2NjgtNDNiNy04MTBmLTJmOWFlNTlhOTdjMi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQxNDE1MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wNmY2OGRkMjBhMzJhMDNjMWRmNmViYTk2OGQ4NTExZmRiMGQzMjNlM2M4OTU2ZDM3YWQzZDY3Zjk1ZDJlM2U1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.FiH2G1Yt6kY3W-tdNHWNv2ASrDXisqHXaacvHEwSlGc" alt="Actress Portfolio">
+                    <img src="https://private-user-images.githubusercontent.com/185145096/376885010-6d9a9714-6668-43b7-810f-2f9ae59a97c2.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwODg0MzgsIm5iZiI6MTcyOTA4ODEzOCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg1MDEwLTZkOWE5NzE0LTY2NjgtNDNiNy04MTBmLTJmOWFlNTlhOTdjMi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQxNDE1MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wNmY2OGRkMjBhMzJhMDNjMWRmNmViYTk2OGQ4NTExZmRiMGQzMjNlM2M4OTU2ZDM3YWQzZDY3Zjk1ZDJlM2U1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.FiH2G1Yt6kY3W-tdNHWNv2ASrDXisqHXaacvHEwSlGc" alt="Actress Portfolio"class="responsive-image">
                     <div class="project-overlay">
                         <h3>Professional Arts Portfolio</h3>
                         <p>A bold and visually immersive portfolio that showcases the extraordinary talent and work ethic of an NYU Tisch Alumni. </p>
@@ -503,7 +515,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884811-70406f48-d9d1-4639-9124-03fc3a5d8673.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwODg0MzgsIm5iZiI6MTcyOTA4ODEzOCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0ODExLTcwNDA2ZjQ4LWQ5ZDEtNDYzOS05MTI0LTAzZmMzYTVkODY3My5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQxNDE1MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lODIzNjNkMTZiZGJlZTFmNDBkM2I2YTgxNjMwYThhOGViY2I3NWNjYWUyZDA1MTRmMGJiNjdiY2M2NjAzNjE2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ml7mnCN57VtkTHr5JKrqV_T3jziQB1zSnRaaliw1-dI" alt="NYU Insider's Guide">
+                    <img src="https://private-user-images.githubusercontent.com/185145096/376884811-70406f48-d9d1-4639-9124-03fc3a5d8673.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwODg0MzgsIm5iZiI6MTcyOTA4ODEzOCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0ODExLTcwNDA2ZjQ4LWQ5ZDEtNDYzOS05MTI0LTAzZmMzYTVkODY3My5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQxNDE1MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lODIzNjNkMTZiZGJlZTFmNDBkM2I2YTgxNjMwYThhOGViY2I3NWNjYWUyZDA1MTRmMGJiNjdiY2M2NjAzNjE2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ml7mnCN57VtkTHr5JKrqV_T3jziQB1zSnRaaliw1-dI" alt="NYU Insider's Guide"class="responsive-image">
                     <div class="project-overlay">
                         <h3>NYU Insider's Guide</h3>
                         <p>A student-centric website and blog full of resources and tips for navigating college life at NYU. (Work in progress)</p>
