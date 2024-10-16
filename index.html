@@ -22,10 +22,9 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        p {
+        p{
             font-family: Lato;
-            font-size: 1.2rem;
+            font-size: 1.2rem ;
         }
 
         .container {
@@ -33,7 +32,6 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
         h2 {
             font-family: 'Poppins', serif;
             font-size: 3rem;
@@ -52,6 +50,7 @@
 
         .navbar .container {
             display: flex;
+            align-items: right;
             align-items: center;
             justify-content: space-between;
         }
@@ -61,6 +60,7 @@
             font-size: 1.7rem;
             font-weight: 700;
             color: #ffffff;
+            align-items: left;
         }
 
         .nav-links {
@@ -78,13 +78,6 @@
 
         .nav-links a:hover {
             color: #00b4d8;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 2rem;
-            color: #ffffff;
-            cursor: pointer;
         }
 
         /* Hero Section */
@@ -214,11 +207,11 @@
             padding: 5rem 0;
             background: linear-gradient(to bottom, #000428, #004e92);
         }
-
         .service-card:active {
             font-size: 1.2rem;
             font-family: Lato;
         }
+        
 
         .services-grid {
             display: grid;
@@ -265,7 +258,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -305,11 +298,11 @@
         }
 
         .project-card:hover .project-overlay {
-            opacity: 1;
+            opacity:1.5;
         }
 
         .project-overlay h3 {
-            font-family: Lato;
+            font-family:Lato;
             font-size: 2rem;
             margin-bottom: 1rem;
         }
@@ -319,26 +312,28 @@
             font-size: 1.2rem;
             padding: 0 1rem;
         }
-
         .project-overlay a {
             margin-top: 1rem;
             padding: 0.5rem 1rem;
             background-color: #00b4d8;
             color: #ffffff;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+         border-radius: 5px;
+        transition: background-color 0.3s;
         }
 
         .project-overlay a:hover {
-            background-color: #0077b6;
+        background-color: #0077b6;
         }
 
+
         /* Contact Section */
+
         .contact-section {
             padding: 5rem 0;
             background: linear-gradient(to bottom, #000428, #004e92);
             text-align: center;
+
         }
 
         .contact-form {
@@ -407,47 +402,6 @@
         .social-links a:hover {
             color: #0077b6;
         }
-
-        /* Responsive Media Queries */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                gap: 1rem;
-                background: rgba(0, 0, 0, 0.9);
-                position: absolute;
-                top: 100%;
-                right: 0;
-                width: 100%;
-                padding: 1rem;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links.show {
-                display: flex;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-
-            .about-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .about-text,
-            .about-image {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 
@@ -456,7 +410,6 @@
         <nav class="navbar">
             <div class="container">
                 <div class="brand-logo">Walter Armijos</div>
-                <span class="menu-toggle">☰</span>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
@@ -467,7 +420,7 @@
         </nav>
         <div class="hero-content container">
             <h1>Walter's Portfolio</h1>
-            <p>Creativity, strategy, and a touch of human insight for every project.</p>
+            <p>Creativity, strategy, and a touch of human insight for every project .</p>
             <a href="#contact" class="cta-button">Let's Work Together</a>
         </div>
         <div class="scroll-indicator">
@@ -486,7 +439,7 @@
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884931-3df622c5-a426-4357-ae5d-44da31a7bf04.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTM3NTYsIm5iZiI6MTcyOTA1MzQ1NiwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0OTMxLTNkZjYyMmM1LWE0MjYtNDM1Ny1hZTVkLTQ0ZGEzMWE3YmYwNC5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MTAxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDEwMTZUMDQzNzM2WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MmU5YzBkNDA2YzI4YmIzNGQ1NTVjNGI0NDVmNjQ4YWUxZGVmZjczMTBmYjc0Y2YyYTg2YmE3NzljNGQ0OGM3YSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.pnOqj7YnW91DMofc4M-Iy0ErYZd7Vz4J5gk6AUYXEFg" alt="Walter's portrait"style="max-width: 100%; height: auto;">
+                    <img src="c5a40c3e-015e-470d-aa8a-f7d3dfcfa5ba.JPG" alt="Walter's portrait">
                 </div>
             </div>
         </div>
@@ -526,12 +479,12 @@
             <h2>Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884890-d19dec53-58b0-46aa-8783-008ad2721eb0.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTM3NTYsIm5iZiI6MTcyOTA1MzQ1NiwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0ODkwLWQxOWRlYzUzLTU4YjAtNDZhYS04NzgzLTAwOGFkMjcyMWViMC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQwNDM3MzZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MTNjNzRlZGQ3YTQzM2RiY2NiYjA5MjQ2YjFkMzAzZjVhZDY3YWYyMTU0ZTNlMTQ2YzY4YzY1YjlmYTM4Yjg4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.u3-jzTTMcN-pXzUpTVY2kyHq6mAaAUx8uOxoR4qbUvM" alt="Esthelas Cleaning Service">
+                    <img src="Screenshot 2024-10-15 at 9.32.38 PM.jpg" alt="Esthelas Cleaning Service">
                     <div class="project-overlay">
                         <h3>Esthelas Cleaning Service</h3>
                         <p>A clean and user-friendly website that showcased this NJ based residential cleanining company's services but also improved their lead conversion significantly.</p>
                         <a href="https://esthelascleaningservice.com" target="_blank">View Project</a>
-                    </div>
+                    </div>     
                 </div>
                 <div class="project-card">
                     <img src="Screenshot 2024-10-15 at 9.33.45 PM.jpg" alt="Growth Springs Eternal">
@@ -587,3 +540,5 @@
 </body>
 
 </html>
+
+
