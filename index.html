@@ -75,6 +75,31 @@
             font-weight: 400;
             transition: color 0.3s;
         }
+        .menu-toggle {
+    display: none; /* Hide toggle by default */
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ffffff;
+}
+        @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: right;
+        padding: 1rem;
+    }
+            .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block; /* Show toggle on smaller devices */
+    }
 
         .nav-links a:hover {
             color: #00b4d8;
@@ -195,13 +220,15 @@
         .about-image {
             flex: 1;
         }
-
-        .about-image img {
+        .about-image img,
+        .project-card img {
             width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 
+       
         /* Services Section */
         .services-section {
             padding: 5rem 0;
@@ -271,11 +298,8 @@
             transition: transform 0.3s;
         }
 
-        .project-card img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s;
-        }
+        
+        
 
         .project-card:hover img {
             transform: scale(1.1);
@@ -402,6 +426,62 @@
         .social-links a:hover {
             color: #0077b6;
         }
+        img {
+            max-width: 100%; /* Ensures the image doesn't exceed the container width */
+            height: auto;    /* Keeps the aspect ratio */
+        }
+        @media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* One column for smaller screens */
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* One column for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .about-text h2,
+    .services-section h2,
+    .projects-section h2 {
+        font-size: 2rem;
+    }
+
+    .about-text p,
+    .service-card p {
+        font-size: 1rem;
+    }
+}
+
+
+
     </style>
 </head>
 
@@ -538,6 +618,12 @@
             </div>
         </div>
     </footer>
+    <script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+</script>
 </body>
 
 </html>
