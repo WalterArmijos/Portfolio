@@ -450,6 +450,52 @@
         flex: 1 1 100%; /* Full width on mobile screens */
     }
 }
+        @media (max-width: 768px) {
+    /* Adjust project card on mobile */
+    .project-card {
+        position: relative;
+        overflow: visible;
+        margin-bottom: 2rem; /* Add spacing between cards if needed */
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+        transition: none;
+    }
+
+    .project-card:hover img {
+        transform: none;
+    }
+
+    .project-overlay {
+        position: static;
+        opacity: 1;
+        background: none;
+        color: #ffffff;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .project-card:hover .project-overlay {
+        opacity: 1;
+    }
+
+    /* Optional: Adjust text size for readability on small screens */
+    .project-overlay h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-overlay p {
+        font-size: 1rem;
+    }
+
+    /* Ensure the projects grid displays one column on mobile */
+    .projects-grid {
+        flex-direction: column;
+    }
+}
+
 
 
         /* Contact Section */
