@@ -215,6 +215,11 @@
             background: linear-gradient(to bottom, #000428, #004e92);
         }
 
+        .service-card:active {
+            font-size: 1.2rem;
+            font-family: Lato;
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -435,29 +440,12 @@
 
             .about-content {
                 flex-direction: column;
+                text-align: center;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            h2 {
-                font-size: 2rem;
+            .about-text,
+            .about-image {
+                width: 100%;
             }
         }
     </style>
@@ -468,7 +456,7 @@
         <nav class="navbar">
             <div class="container">
                 <div class="brand-logo">Walter Armijos</div>
-                <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+                <span class="menu-toggle">☰</span>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
@@ -494,11 +482,11 @@
                 <div class="about-text">
                     <h2>About Me</h2>
                     <p>
-                        Hi! I'm Walter. <br>I'm a soon-to-be graduate at NYU Stern, focusing on blending my passion for design, branding, and digital strategy to help businesses and professionals make their mark. I create compelling visual narratives that engage audiences and drive meaningful connections along with measurable results for brands.<br> I turn ideas into impactful experiences by approaching every project with curiosity and dedication to understanding what makes each brand, product, and service unique.
+                        Hi! I'm Walter. <br>I'm in my final semester at NYU Stern, figuring out how to blend my passion for design, branding, and digital strategy to help businesses make their mark. My work involves creating a captivating visual story or making your brand more recognizable.<br> I turn ideas into impactful experiences by approaching every project with curiosity and dedication to really understand what makes each client and product/service unique.
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884931-3df622c5-a426-4357-ae5d-44da31a7bf04.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTM3NTYsIm5iZiI6MTcyOTA1MzQ1NiwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0OTMxLTNkZjYyMmM1LWE0MjYtNDM1Ny1hZTVkLTQ0ZGEzMWE3YmYwNC5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MTAxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDEwMTZUMDQzNzM2WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MmU5YzBkNDA2YzI4YmIzNGQ1NTVjNGI0NDVmNjQ4YWUxZGVmZjczMTBmYjc0Y2YyYTg2YmE3NzljNGQ0OGM3YSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.pnOqj7YnW91DMofc4M-Iy0ErYZd7Vz4J5gk6AUYXEFg">
+                    <img src="c5a40c3e-015e-470d-aa8a-f7d3dfcfa5ba.JPG" alt="Walter's portrait">
                 </div>
             </div>
         </div>
@@ -538,34 +526,34 @@
             <h2>Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884890-d19dec53-58b0-46aa-8783-008ad2721eb0.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTM3NTYsIm5iZiI6MTcyOTA1MzQ1NiwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0ODkwLWQxOWRlYzUzLTU4YjAtNDZhYS04NzgzLTAwOGFkMjcyMWViMC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQwNDM3MzZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MTNjNzRlZGQ3YTQzM2RiY2NiYjA5MjQ2YjFkMzAzZjVhZDY3YWYyMTU0ZTNlMTQ2YzY4YzY1YjlmYTM4Yjg4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.u3-jzTTMcN-pXzUpTVY2kyHq6mAaAUx8uOxoR4qbUvM" alt="Esthelas Cleaning Service">
+                    <img src="Screenshot 2024-10-15 at 9.32.38 PM.jpg" alt="Esthelas Cleaning Service">
                     <div class="project-overlay">
                         <h3>Esthelas Cleaning Service</h3>
-                        <p>A clean and user-friendly website that delivers this New Jersey-based residential cleaning company's services and significantly improves their lead conversion.</p>
+                        <p>A clean and user-friendly website that showcased this NJ based residential cleanining company's services but also improved their lead conversion significantly.</p>
                         <a href="https://esthelascleaningservice.com" target="_blank">View Project</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884778-87c658a9-dd54-4dd5-9084-2f07e0477717.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTM3NTYsIm5iZiI6MTcyOTA1MzQ1NiwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0Nzc4LTg3YzY1OGE5LWRkNTQtNGRkNS05MDg0LTJmMDdlMDQ3NzcxNy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQwNDM3MzZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNjVlYjUzNDE2Yjg1NzZkZmE1ZGIwMDgwOTVmZDVmYTQ4ZTE0N2RiMDU2ZjgwYTNkODEyYmEzY2Q0MTI3YmE3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ZiMrkrOye2lW3Ags71cUkz7u7NywPgqBP0LIlMV_ePo" alt="Growth Springs Eternal">
+                    <img src="Screenshot 2024-10-15 at 9.33.45 PM.jpg" alt="Growth Springs Eternal">
                     <div class="project-overlay">
                         <h3>Growth Springs Eternal</h3>
-                        <p>A visually engaging site that emphasizes expertise and builds trust for prospective clients seeking professional development guidance.</p>
+                        <p>A visually engaging site that emphasizes expertise and builds trust for prospective clients looking for professional development guidance.</p>
                         <a href="https://tinyurl.com/GSELearning" target="_blank">View Project</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376885010-6d9a9714-6668-43b7-810f-2f9ae59a97c2.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTM3NTYsIm5iZiI6MTcyOTA1MzQ1NiwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg1MDEwLTZkOWE5NzE0LTY2NjgtNDNiNy04MTBmLTJmOWFlNTlhOTdjMi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQwNDM3MzZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YzBlNDVjYjc1MzU0ZDg3N2RmYzUzM2ZjYTFlNThkMDFjNGU3NzJmNGM0M2RhNWZkZTNiN2NhZGUzZmNiOGIzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Vpa9sHTrbeaOaEQwu1LHGTs8jWYoTB-4besBHWsPgrM" alt="Actress Portfolio">
+                    <img src="Screenshot 2024-10-15 at 9.36.32 PM.jpg" alt="Actress Portfolio">
                     <div class="project-overlay">
                         <h3>Professional Arts Portfolio</h3>
-                        <p>A bold and visually immersive portfolio showcasing an NYU Tisch Alumni's extraordinary talent and work ethic.</p>
+                        <p>A bold and visually immersive portfolio that showcases the extraordinary talent and work ethic of an NYU Tisch Alumni. </p>
                         <a href="https://annethpaoladavis.wixstudio.io/annethpaoladavis" target="_blank">View Project</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884811-70406f48-d9d1-4639-9124-03fc3a5d8673.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTM3NTYsIm5iZiI6MTcyOTA1MzQ1NiwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0ODExLTcwNDA2ZjQ4LWQ5ZDEtNDYzOS05MTI0LTAzZmMzYTVkODY3My5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQwNDM3MzZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lMGU0NzQ0YzYyMTM5YjlmMGQ1NTgyYTEyNWYwN2RjY2I2N2U4MjA3NjQwNGEwNGU3YzQ5ZjVmNzM2Yzk4NGMzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.NC5CmElthwE9MGzLL1zpkf_45plfuyt2YDASGK7LzS0" alt="NYU Insider's Guide">
+                    <img src="Screenshot 2024-10-15 at 9.33.07 PM.jpg" alt="NYU Insider's Guide">
                     <div class="project-overlay">
                         <h3>NYU Insider's Guide</h3>
-                        <p>A student-centric website full of resources and tips for navigating college life at NYU.</p>
+                        <p>A student-centric website and blog full of resources and tips for navigating college life at NYU. (Work in progess)</p>
                         <a href="https://www.nyuinsidersguide.com" target="_blank">View Project</a>
                     </div>
                 </div>
@@ -576,7 +564,7 @@
     <section id="contact" class="section contact-section">
         <div class="container">
             <h2>Get In Touch</h2>
-            <p>If you're looking for someone who brings energy, creativity, and strategic thinking to the table, let's connect!<br>Fill out the form below, and let's start building something great together.</p>
+            <p>If you're looking for someone who brings energy, creativity, and strategic thinking to the table, let's connect!<br></p> <p>Fill out the form below, and let's start building something great together.</p>
             <form action="#" method="POST" class="contact-form">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
@@ -592,16 +580,10 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/wsap/">LinkedIn</a>
                 <a href="https://i6.cims.nyu.edu/~wa2054/me/">More About Me</a>
+                <!-- <a href="#">Twitter</a> -->
             </div>
         </div>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('show');
-        }
-    </script>
 </body>
 
 </html>
