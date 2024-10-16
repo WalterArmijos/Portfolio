@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walter | Designer & Consultant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            color: #f5f5f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        p{
+            font-family: Lato;
+            font-size: 1.2rem ;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-family: 'Poppins', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: right;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #ffffff;
+            align-items: left;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00b4d8;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-family: 'Poppins', serif;
+            font-size: 4rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 2.5s ease-in;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            background-color: #f68b07;
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            font-family: Poppins;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #0077b6;
+            transform: translateY(-5px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            text-align: center;
+        }
+
+        .scroll-indicator span {
+            font-size: 1.2rem;
+            font-family: Lato, Arial, Helvetica, sans-serif;
+        }
+
+        .scroll-line {
+            width: 2px;
+            height: 50px;
+            margin: 0.5rem auto;
+            background-color: white;
+            animation: scroll 1.5s infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                height: 10px;
+            }
+            50% {
+                height: 50px;
+            }
+            100% {
+                height: 10px;
+            }
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, #004e92, #000428);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-family: 'Poppins', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, #000428, #004e92);
+        }
+        .service-card:active {
+            font-size: 1.2rem;
+            font-family: Lato;
+        }
+        
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #00b4d8;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #dddddd;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, #004e92, #000428);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity:1.5;
+        }
+
+        .project-overlay h3 {
+            font-family:Lato;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-overlay p {
+            font-family: Lato;
+            font-size: 1.2rem;
+            padding: 0 1rem;
+        }
+        .project-overlay a {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #00b4d8;
+            color: #ffffff;
+            text-decoration: none;
+         border-radius: 5px;
+        transition: background-color 0.3s;
+        }
+
+        .project-overlay a:hover {
+        background-color: #0077b6;
+        }
+
+
+        /* Contact Section */
+
+        .contact-section {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            text-align: center;
+
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            color: #333;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .submit-button {
+            padding: 1rem;
+            background-color: #f68b07;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #0077b6;
+            transform: translateY(-5px);
+        }
+
+        /* Footer Section */
+        .footer {
+            padding: 2rem 0;
+            background: linear-gradient(to bottom, #004e92, #000428);
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: #00b4d8;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #0077b6;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <nav class="navbar">
+            <div class="container">
+                <div class="brand-logo">Walter Armijos</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero-content container">
+            <h1>Walter's Portfolio</h1>
+            <p>Creativity, strategy, and a touch of human insight for every project .</p>
+            <a href="#contact" class="cta-button">Let's Work Together</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>
+                        Hi! I'm Walter. <br>I'm in my final semester at NYU Stern, figuring out how to blend my passion for design, branding, and digital strategy to help businesses make their mark. My work involves creating a captivating visual story or making your brand more recognizable.<br> I turn ideas into impactful experiences by approaching every project with curiosity and dedication to really understand what makes each client and product/service unique.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="c5a40c3e-015e-470d-aa8a-f7d3dfcfa5ba.JPG" alt="Walter's portrait">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section services-section">
+        <div class="container">
+            <h2>What I Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        📌
+                    </div>
+                    <h3>Web Design</h3>
+                    <p>Thoughtful, responsive websites that are tailored to brands' stories. I create digital homes for businesses that are functional and memorable.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        🌟
+                    </div>
+                    <h3>Branding</h3>
+                    <p>Every brand has a story worth telling. I work with brands to develop a cohesive brand identity that resonates with a desired target audience and sets them apart from the competition.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        🖥️
+                    </div>
+                    <h3>SEO & Strategy</h3>
+                    <p>Visibility is key. I work with businesses to ensure they reach their audience through effective SEO and targeted digital strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="Screenshot 2024-10-15 at 9.32.38 PM.png" alt="Esthelas Cleaning Service">
+                    <div class="project-overlay">
+                        <h3>Esthelas Cleaning Service</h3>
+                        <p>A clean and user-friendly website that showcased this NJ based residential cleanining company's services but also improved their lead conversion significantly.</p>
+                        <a href="https://esthelascleaningservice.com" target="_blank">View Project</a>
+                    </div>     
+                </div>
+                <div class="project-card">
+                    <img src="Screenshot 2024-10-15 at 9.33.45 PM.png" alt="Growth Springs Eternal">
+                    <div class="project-overlay">
+                        <h3>Growth Springs Eternal</h3>
+                        <p>A visually engaging site that emphasizes expertise and builds trust for prospective clients looking for professional development guidance.</p>
+                        <a href="https://tinyurl.com/GSELearning" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="Screenshot 2024-10-15 at 9.36.32 PM.png" alt="Actress Portfolio">
+                    <div class="project-overlay">
+                        <h3>Professional Arts Portfolio</h3>
+                        <p>A bold and visually immersive portfolio to help an NYU Tisch Alumni showcase her work and talent.</p>
+                        <a href="https://annethpaoladavis.wixstudio.io/annethpaoladavis" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="Screenshot 2024-10-15 at 9.33.07 PM.png" alt="NYU Insider's Guide">
+                    <div class="project-overlay">
+                        <h3>NYU Insider's Guide</h3>
+                        <p>A student-centric website full of resources and tips for navigating college life at NYU.</p>
+                        <a href="https://www.nyuinsidersguide.com" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>If you're looking for someone who brings energy, creativity, and strategic thinking to the table, let's connect!<br></p> <p>Fill out the form below, and let's start building something great together.</p>
+            <form action="#" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Walter Armijos. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/wsap/">LinkedIn</a>
+                <a href="https://i6.cims.nyu.edu/~wa2054/me/">More About Me</a>
+                <!-- <a href="#">Twitter</a> -->
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+
