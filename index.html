@@ -22,9 +22,10 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        p{
+
+        p {
             font-family: Lato;
-            font-size: 1.2rem ;
+            font-size: 1.2rem;
         }
 
         .container {
@@ -32,6 +33,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
         h2 {
             font-family: 'Poppins', serif;
             font-size: 3rem;
@@ -50,7 +52,6 @@
 
         .navbar .container {
             display: flex;
-            align-items: right;
             align-items: center;
             justify-content: space-between;
         }
@@ -60,7 +61,6 @@
             font-size: 1.7rem;
             font-weight: 700;
             color: #ffffff;
-            align-items: left;
         }
 
         .nav-links {
@@ -78,6 +78,13 @@
 
         .nav-links a:hover {
             color: #00b4d8;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            color: #ffffff;
+            cursor: pointer;
         }
 
         /* Hero Section */
@@ -207,11 +214,6 @@
             padding: 5rem 0;
             background: linear-gradient(to bottom, #000428, #004e92);
         }
-        .service-card:active {
-            font-size: 1.2rem;
-            font-family: Lato;
-        }
-        
 
         .services-grid {
             display: grid;
@@ -258,7 +260,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -298,11 +300,11 @@
         }
 
         .project-card:hover .project-overlay {
-            opacity:1.5;
+            opacity: 1;
         }
 
         .project-overlay h3 {
-            font-family:Lato;
+            font-family: Lato;
             font-size: 2rem;
             margin-bottom: 1rem;
         }
@@ -312,28 +314,26 @@
             font-size: 1.2rem;
             padding: 0 1rem;
         }
+
         .project-overlay a {
             margin-top: 1rem;
             padding: 0.5rem 1rem;
             background-color: #00b4d8;
             color: #ffffff;
             text-decoration: none;
-         border-radius: 5px;
-        transition: background-color 0.3s;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         .project-overlay a:hover {
-        background-color: #0077b6;
+            background-color: #0077b6;
         }
 
-
         /* Contact Section */
-
         .contact-section {
             padding: 5rem 0;
             background: linear-gradient(to bottom, #000428, #004e92);
             text-align: center;
-
         }
 
         .contact-form {
@@ -402,6 +402,64 @@
         .social-links a:hover {
             color: #0077b6;
         }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -410,6 +468,7 @@
         <nav class="navbar">
             <div class="container">
                 <div class="brand-logo">Walter Armijos</div>
+                <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
@@ -420,7 +479,7 @@
         </nav>
         <div class="hero-content container">
             <h1>Walter's Portfolio</h1>
-            <p>Creativity, strategy, and a touch of human insight for every project .</p>
+            <p>Creativity, strategy, and a touch of human insight for every project.</p>
             <a href="#contact" class="cta-button">Let's Work Together</a>
         </div>
         <div class="scroll-indicator">
@@ -439,7 +498,7 @@
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884931-3df622c5-a426-4357-ae5d-44da31a7bf04.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTI0ODgsIm5iZiI6MTcyOTA1MjE4OCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0OTMxLTNkZjYyMmM1LWE0MjYtNDM1Ny1hZTVkLTQ0ZGEzMWE3YmYwNC5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MTAxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDEwMTZUMDQxNjI4WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ZDkwNDEwYWMzZDBmNzljYTdhMzNiMGRlOTI0MjZkOWQ5ZGQ0NGNhMDg1ZmZhNzg4MDJmODAyMDlhZmY3ZmMxNSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ._ELRr9dXtnmIuP6FBSG9skxNjJsL_CzKAwyj5e66sQY">
+                    <img src="https://private-user-images.githubusercontent.com/185145096/376884931-3df622c5-a426-4357-ae5d-44da31a7bf04.jpeg">
                 </div>
             </div>
         </div>
@@ -479,15 +538,15 @@
             <h2>Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884890-d19dec53-58b0-46aa-8783-008ad2721eb0.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTI0ODgsIm5iZiI6MTcyOTA1MjE4OCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0ODkwLWQxOWRlYzUzLTU4YjAtNDZhYS04NzgzLTAwOGFkMjcyMWViMC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQwNDE2MjhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iYzMzZDhiMWEyODk5ZDYwNWFmNWY0N2U5NWZjZDJmOTBmM2EwNWZjMDA2ODlkOWQzZGRjZTM5YWU0NDU5NDlkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.-O3uKBPyc0Zme-lb838BXZazzqbtCZLko_oM9bXdVCc" alt="Esthelas Cleaning Service">
+                    <img src="https://private-user-images.githubusercontent.com/185145096/376884890-d19dec53-58b0-46aa-8783-008ad2721eb0.jpg" alt="Esthelas Cleaning Service">
                     <div class="project-overlay">
                         <h3>Esthelas Cleaning Service</h3>
                         <p>A clean and user-friendly website that delivers this New Jersey-based residential cleaning company's services and significantly improves their lead conversion.</p>
                         <a href="https://esthelascleaningservice.com" target="_blank">View Project</a>
-                    </div>     
+                    </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884778-87c658a9-dd54-4dd5-9084-2f07e0477717.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTIzNjQsIm5iZiI6MTcyOTA1MjA2NCwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0Nzc4LTg3YzY1OGE5LWRkNTQtNGRkNS05MDg0LTJmMDdlMDQ3NzcxNy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQwNDE0MjRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01YzRmNmNlY2FjMGIyZmRkNGFmY2ZhMmMyY2M3ZDY0MGRlMTQ2NmVjMzM0YzM5MmFkZjE2OGNkMWM5YzU5ZWI1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.LRoyj2MPKwMxuD3NeodFkMSqnLcWI34IGg4-j1AIdDw" alt="Growth Springs Eternal">
+                    <img src="https://private-user-images.githubusercontent.com/185145096/376884778-87c658a9-dd54-4dd5-9084-2f07e0477717.jpg" alt="Growth Springs Eternal">
                     <div class="project-overlay">
                         <h3>Growth Springs Eternal</h3>
                         <p>A visually engaging site that emphasizes expertise and builds trust for prospective clients seeking professional development guidance.</p>
@@ -495,7 +554,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376885010-6d9a9714-6668-43b7-810f-2f9ae59a97c2.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTM3NTYsIm5iZiI6MTcyOTA1MzQ1NiwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg1MDEwLTZkOWE5NzE0LTY2NjgtNDNiNy04MTBmLTJmOWFlNTlhOTdjMi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQwNDM3MzZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YzBlNDVjYjc1MzU0ZDg3N2RmYzUzM2ZjYTFlNThkMDFjNGU3NzJmNGM0M2RhNWZkZTNiN2NhZGUzZmNiOGIzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Vpa9sHTrbeaOaEQwu1LHGTs8jWYoTB-4besBHWsPgrM" alt="Actress Portfolio">
+                    <img src="https://private-user-images.githubusercontent.com/185145096/376885010-6d9a9714-6668-43b7-810f-2f9ae59a97c2.jpg" alt="Actress Portfolio">
                     <div class="project-overlay">
                         <h3>Professional Arts Portfolio</h3>
                         <p>A bold and visually immersive portfolio showcasing an NYU Tisch Alumni's extraordinary talent and work ethic.</p>
@@ -503,7 +562,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://private-user-images.githubusercontent.com/185145096/376884811-70406f48-d9d1-4639-9124-03fc3a5d8673.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwNTI0NzEsIm5iZiI6MTcyOTA1MjE3MSwicGF0aCI6Ii8xODUxNDUwOTYvMzc2ODg0ODExLTcwNDA2ZjQ4LWQ5ZDEtNDYzOS05MTI0LTAzZmMzYTVkODY3My5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxNlQwNDE2MTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lZDZmNWY2MWZhYmM3NjNlNmYwYTUzMTY2MzM5ODNiZDgwZjhjNGQ5MmUyZTY1YzA5ZjdhNzk2N2FhM2I3OWI1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.2hXHCua3e_6lECSa_YyeEMlWyEwpUlW1xxJIPsDsDYI" alt="NYU Insider's Guide">
+                    <img src="https://private-user-images.githubusercontent.com/185145096/376884811-70406f48-d9d1-4639-9124-03fc3a5d8673.jpg" alt="NYU Insider's Guide">
                     <div class="project-overlay">
                         <h3>NYU Insider's Guide</h3>
                         <p>A student-centric website full of resources and tips for navigating college life at NYU.</p>
@@ -517,7 +576,7 @@
     <section id="contact" class="section contact-section">
         <div class="container">
             <h2>Get In Touch</h2>
-            <p>If you're looking for someone who brings energy, creativity, and strategic thinking to the table, let's connect!<br></p> <p>Fill out the form below, and let's start building something great together.</p>
+            <p>If you're looking for someone who brings energy, creativity, and strategic thinking to the table, let's connect!<br>Fill out the form below, and let's start building something great together.</p>
             <form action="#" method="POST" class="contact-form">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
@@ -533,12 +592,16 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/wsap/">LinkedIn</a>
                 <a href="https://i6.cims.nyu.edu/~wa2054/me/">More About Me</a>
-                <!-- <a href="#">Twitter</a> -->
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
 </body>
 
 </html>
-
-
