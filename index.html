@@ -257,13 +257,20 @@
         }
 
         .projects-grid {
-            display: grid;
+            display: flex;
+            flex-wrap: wrap;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 20px;
+            justify-content: space-between;
             margin-top: 3rem;
         }
 
         .project-card {
+            flex: 1 1 calc(33.333%-20px);
+            box-sizing: border-box;
+            padding:10px;
+            position: relative;
+                
             position: relative;
             overflow: hidden;
             border-radius: 15px;
@@ -292,6 +299,11 @@
         .project-card:hover img {
             transform: scale(1.1);
         }
+        .project-card img.responsive-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
         .project-overlay {
             position: absolute;
@@ -342,6 +354,11 @@
         .project-overlay a:hover {
         background-color: #0077b6;
         }
+        @media (max-width: 768px) {
+    .project-card {
+        flex: 1 1 100%; /* Full width on mobile screens */
+    }
+}
 
 
         /* Contact Section */
