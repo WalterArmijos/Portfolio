@@ -170,6 +170,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             padding: 0 1rem 3rem 1rem;
+            justify-items: center; /* Center items to prevent stretching */
         }
 
         .blog-card {
@@ -179,6 +180,8 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 350px; /* Limit maximum width */
+            width: 100%; /* Ensure it uses available width up to max-width */
         }
 
         .blog-card:hover {
