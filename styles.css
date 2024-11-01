@@ -28,6 +28,9 @@
     color: rgb(0, 0, 0);
 
 }
+.main-footer .container .social-links{
+    color: #fffff;
+}
 
 /* Blog grid layout */
 .blog-grid {
