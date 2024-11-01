@@ -2,6 +2,7 @@
 
 /* Blog category menu */
 .blog-categories {
+    color: #fffff;
     margin-top: 50px;
     display: flex;
     justify-content: center;
