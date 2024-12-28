@@ -744,21 +744,45 @@
     font-size: 1.1rem; /* Slightly smaller paragraph text */
   }
 
-  /* Adjust service card layout/padding on mobile */
-  .service-card {
-    padding: 1rem; /* Less padding to avoid text overflow */
+}
+@media (max-width: 768px) {
+  /* Ensure project card doesn't hide overflow */
+  .project-card {
+    overflow: visible; 
+    margin-bottom: 2rem; /* for spacing between cards */
   }
 
-  /* Decrease font size in service card headings and paragraphs */
-  .service-card h3 {
-    font-size: 1.4rem;
+  /* Make the overlay behave like a normal (relative) block on mobile */
+  .project-overlay {
+    position: static;       /* no longer absolute */
+    opacity: 1;             /* always visible if you prefer so on mobile */
+    background: none;       /* remove the dark background if you want, or keep it if you like */
+    color: #fff;
+    padding: 1rem;          /* adjust as needed */
+    /* Remove any fixed height or top/left: 0 constraints that were used for hover on desktop */
+    width: auto;
+    height: auto;
   }
-  .service-card p {
-    font-size: 0.95rem; /* or 1rem, depending on your preference */
-    line-height: 1.4;
-    /* Helps break long words instead of overflowing */
-    overflow-wrap: break-word; 
+
+  /* Slightly reduce text margins/padding to avoid cutoff */
+  .project-overlay h3,
+  .project-overlay p {
+    margin: 0.5rem 0;  /* modest vertical spacing */
+    line-height: 1.4;  /* ensure text lines aren't too tall */
   }
+
+  /* Optionally reduce text size if it's still too big */
+  .project-overlay h3 {
+    font-size: 1.4rem; 
+  }
+  .project-overlay p {
+    font-size: 1rem;
+  }
+
+  /* 
+    If you'd rather preserve the dark background on mobile, remove "background: none;"
+    above and keep something like "background: rgba(0, 0, 0, 0.85);"
+  */
 }
 
 
