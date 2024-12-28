@@ -1,361 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | MY Marketing Experience</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        /* Reset and Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Blog | MY Marketing Experience</title>
 
-        body {
-            font-family: 'Lato', sans-serif;
-            font-size: 1.1rem;
-            background: linear-gradient(to bottom, #000428, #004e92);
-            color: #000000;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        p {
-            font-family: 'Lato', sans-serif;
-            font-size: 1.1rem;
-            color: #000000; /* Uncommented to ensure readability */
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #000000;
-        }
-
-        h6 {
-            font-family: 'Lato', sans-serif;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: #000000;
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem 0;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-        }
-
-        .navbar .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand-logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffff;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #ffff;
-            font-family: 'Lato', sans-serif;
-            text-decoration: none;
-            font-weight: 400;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #00b4d8;
-        }
-
-        /* Hamburger Menu Styles */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            background: #ffff;
-            height: 3px;
-            width: 25px;
-            margin: 3px;
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: rgba(0, 0, 0, 0.9);
-                position: absolute;
-                top: 100%;
-                right: 0;
-                width: 100%;
-                text-align: center;
-                padding: 1rem 0;
-            }
-            .category-btn {
-        flex: 1 1 45%; /* Allows buttons to take up ~45% width, fitting two per row */
-        max-width: 45%; /* Ensures buttons don't exceed 45% width */
-    }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
-            }
-        }
-
-        /* Blog Categories */
-        .blog-categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin: 6rem 0 2rem 0; /* Added top margin to account for fixed navbar */
-        }
-
-        .category-btn {
-            padding: 0.5rem 1rem;
-            background-color: #1a1a1a;
-            color: #ffff;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .category-btn.active,
-        .category-btn:hover {
-            background-color: #00b4d8;
-        }
-
-        /* Blog Grid */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            padding: 0 1rem 3rem 1rem;
-            justify-items: center; /* Center items to prevent stretching */
-        }
-
-        .blog-card {
-            background: #ffff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            max-width: 350px; /* Limit maximum width */
-            width: 100%; /* Ensure it uses available width up to max-width */
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.4);
-        }
-
-        .blog-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .blog-card-content {
-            padding: 1rem;
-        }
-
-        .blog-card-content h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #000000;
-        }
-
-        .blog-card-content p {
-            color: #000000;
-        }
-
-        /* Blog Modal */
-        .blog-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-            background-color: rgba(0,0,0,0.8);
-            padding-top: 60px;
-        }
-
-        .blog-modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 2rem;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 800px;
-            border-radius: 10px;
-            position: relative;
-        }
-
-        .close-modal {
-            color: #aaa;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-             z-index: 1001; 
-        }
-
-        .close-modal:hover,
-        .close-modal:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* Footer Styles */
-        .main-footer {
-            padding: 2rem 0;
-            background: linear-gradient(to bottom, #004e92, #000428);
-            text-align: center;
-        }
-
-        .main-footer p {
-            margin-bottom: 1rem;
-            color: #ffff;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-
-        .social-links a {
-            color: #00b4d8;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #0077b6;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .blog-categories {
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            .blog-modal-content {
-                width: 95%;
-            }
-            .category-btn {
-            flex: 1 1 45%; /* Allows buttons to take up ~45% width, fitting two per row */
-            max-width: 45%; /* Ensures buttons don't exceed 45% width */
-             padding: 0.4rem 0.8rem; 
-            font-size: 0.9rem;
-                
-    }
-        }
-    </style>
+  <!-- Use the same combined font import as index.html -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@300;400&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <header class="hero">
-        <nav class="navbar">
-            <div class="container">
-                <a href="index.html" class="brand-logo">Walter Armijos</a>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#projects">Projects</a></li>
-                    <li><a href="blog.html" class="active">Blog</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Blog Category Menu -->
-        <div class="blog-categories">
-            <button class="category-btn active" data-category="all">All Posts</button>
-            <button class="category-btn" data-category="Digital Marketing Fundamentals">Digital Marketing Fundamentals</button>
-            <button class="category-btn" data-category="Website Design & User Experience">Website Design & User Experience</button>
-            <button class="category-btn" data-category="Social Media Marketing">Social Media Marketing</button>
-            <button class="category-btn" data-category="SEO & Content Strategy">SEO & Content Strategy</button>
-            <button class="category-btn" data-category="Email Marketing & Lead Generation">Email Marketing & Lead Generation</button>
-            <button class="category-btn" data-category="Branding and Design Tips">Branding and Design Tips</button>
+  <header class="hero" role="banner">
+    <nav class="navbar" role="navigation">
+      <div class="container">
+        <a href="index.html" class="brand-logo">Walter Armijos</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+      </div>
+    </nav>
 
-        <!-- Blog Grid -->
-        <div class="blog-grid" id="blogGrid">
-            <!-- Blog cards will be dynamically added here -->
-        </div>
+    <!-- Blog Category Menu -->
+    <div class="blog-categories">
+      <button class="category-btn active" data-category="all">All Posts</button>
+      <button
+        class="category-btn"
+        data-category="Digital Marketing Fundamentals"
+      >
+        Digital Marketing Fundamentals
+      </button>
+      <button
+        class="category-btn"
+        data-category="Website Design & User Experience"
+      >
+        Website Design & User Experience
+      </button>
+      <button
+        class="category-btn"
+        data-category="Social Media Marketing"
+      >
+        Social Media Marketing
+      </button>
+      <button class="category-btn" data-category="SEO & Content Strategy">
+        SEO & Content Strategy
+      </button>
+      <button
+        class="category-btn"
+        data-category="Email Marketing & Lead Generation"
+      >
+        Email Marketing & Lead Generation
+      </button>
+      <button
+        class="category-btn"
+        data-category="Branding and Design Tips"
+      >
+        Branding and Design Tips
+      </button>
+    </div>
 
-        <!-- Blog Modal -->
-        <div class="blog-modal" id="blogModal">
-            <div class="blog-modal-content" id="blogModalContent">
-                <span class="close-modal" id="closeModal">&times;</span>
-                <div id="modalBlogContent" class="blog-post"></div>
-            </div>
-        </div>
+    <!-- Blog Grid -->
+    <div class="blog-grid" id="blogGrid"></div>
 
+    <!-- Blog Modal -->
+    <div class="blog-modal" id="blogModal">
+      <div class="blog-modal-content" id="blogModalContent">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <div id="modalBlogContent" class="blog-post"></div>
+      </div>
+    </div>
+  </header>
 
-<script>
-           //  Blog Data
-        const blogs = [
+  <main role="main"></main>
+
+  <footer class="main-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2024 MY Marketing Experience. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Blog scripts + hamburger toggle, all deferred -->
+  <script defer>
+    /* -------------------------------------------
+       BLOG DATA (unchanged, just truncated here)
+    ------------------------------------------- */
+    const blogs = [
             {
                 id: 1,
                 title: "Digital Marketing Fundamentals: A Small Business Owner's Intro Guide",
@@ -1362,115 +1111,96 @@
             // Add more blog entries here
         ];
 
-            // DOM Elements
-            const blogGrid = document.getElementById('blogGrid');
-            const blogModal = document.getElementById('blogModal');
-            const modalBlogContent = document.getElementById('modalBlogContent');
-            const closeModal = document.getElementById('closeModal');
-            const categoryButtons = document.querySelectorAll('.category-btn');
+           // DOM Elements
+    const blogGrid = document.getElementById("blogGrid");
+    const blogModal = document.getElementById("blogModal");
+    const modalBlogContent = document.getElementById("modalBlogContent");
+    const closeModal = document.getElementById("closeModal");
+    const categoryButtons = document.querySelectorAll(".category-btn");
 
-            // Render Blog Cards
-            function renderBlogs(category = 'all') {
-                blogGrid.innerHTML = ''; // Clear existing cards
+    // Render Blog Cards
+    function renderBlogs(category = "all") {
+      blogGrid.innerHTML = "";
 
-                const filteredBlogs = category === 'all' 
-                    ? blogs 
-                    : blogs.filter(blog => blog.category === category);
+      const filteredBlogs =
+        category === "all"
+          ? blogs
+          : blogs.filter((blog) => blog.category === category);
 
-                filteredBlogs.forEach(blog => {
-                    const blogCard = document.createElement('div');
-                    blogCard.classList.add('blog-card');
-                    blogCard.innerHTML = `
-                        <img src="${blog.image}" alt="${blog.title}">
-                        <div class="blog-card-content">
-                            <h3>${blog.title}</h3>
-                            <p>${blog.shortDescription}</p>
-                        </div>
-                    `;
-                    
-                    // Open modal on card click
-                    blogCard.addEventListener('click', () => openBlogModal(blog));
-                    
-                    blogGrid.appendChild(blogCard);
-                });
-            }
+      filteredBlogs.forEach((blog) => {
+        const blogCard = document.createElement("div");
+        blogCard.classList.add("blog-card");
+        blogCard.innerHTML = `
+          <img
+            src="${blog.image}"
+            alt="${blog.title}"
+            loading="lazy"
+          />
+          <div class="blog-card-content">
+              <h3>${blog.title}</h3>
+              <p>${blog.shortDescription}</p>
+          </div>
+        `;
 
-            // Open Blog Modal
-            function openBlogModal(blog) {
-                modalBlogContent.innerHTML = blog.fullContent;
-                blogModal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            }
+        // Open modal on card click
+        blogCard.addEventListener("click", () => openBlogModal(blog));
+        blogGrid.appendChild(blogCard);
+      });
+    }
 
-            // Close Blog Modal
-            function closeBlogModal() {
-                blogModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
+    // Open Blog Modal
+    function openBlogModal(blog) {
+      modalBlogContent.innerHTML = blog.fullContent;
+      blogModal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
 
-            // Category Filtering
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    categoryButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    button.classList.add('active');
-                    // Render blogs for selected category
-                    renderBlogs(button.dataset.category);
-                });
-            });
+    // Close Blog Modal
+    function closeBlogModal() {
+      blogModal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
 
-            // Close modal when clicking outside or on close button
-            closeModal.addEventListener('click', closeBlogModal);
-            blogModal.addEventListener('click', (e) => {
-                if (e.target === blogModal) {
-                    closeBlogModal();
-                }
-            });
+    // Category Filtering
+    categoryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        categoryButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+        renderBlogs(button.dataset.category);
+      });
+    });
 
-            // Initial render
-            renderBlogs();
+    // Close modal when clicking outside or on close button
+    closeModal.addEventListener("click", closeBlogModal);
+    blogModal.addEventListener("click", (e) => {
+      if (e.target === blogModal) {
+        closeBlogModal();
+      }
+    });
 
-            // Hamburger Menu Toggle
-            // const hamburger = document.getElementById('hamburger');
-            // const navLinks = document.getElementById('nav-links');
+    // Initial render
+    renderBlogs();
 
-            // hamburger.addEventListener('click', () => {
-            //     // Toggle 'active' class on hamburger and nav-links
-            //     hamburger.classList.toggle('active');
-            //     navLinks.classList.toggle('active');
-            // });
+    // Hamburger Menu
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
 
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
 
-    </script>
-
-        
-    </header>
-
-        
-
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2024 MY Marketing Experience. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" aria-label="GitHub">GitHub</a>
-                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                <a href="#" aria-label="Twitter">Twitter</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
-
-        hamburger.addEventListener('click', () => {
-            // Toggle 'active' class on hamburger and nav-links
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-        </script>
+    // Close menu on link click
+    const navLinkElements = navLinks.querySelectorAll("a");
+    navLinkElements.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (hamburger.classList.contains("active")) {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
 
