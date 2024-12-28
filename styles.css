@@ -597,8 +597,9 @@
 
   /* Centering container */
 .center-btn {
-    text-align: center;
-    margin: 2rem 0; /* Adjust spacing above/below as needed */
+ display: flex;
+  justify-content: center;
+  align-items: center;
   }
   
   /* Optional: create a special LinkedIn button style */
