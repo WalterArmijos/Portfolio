@@ -735,4 +735,32 @@
       font-size: 0.9rem;
     }
   }
+@media (max-width: 768px) {
+  /* Make the hero header text smaller on mobile */
+  .hero-content h1 {
+    font-size: 2.2rem; /* Adjust as preferred */
+  }
+  .hero-content p {
+    font-size: 1.1rem; /* Slightly smaller paragraph text */
+  }
+
+  /* Adjust service card layout/padding on mobile */
+  .service-card {
+    padding: 1rem; /* Less padding to avoid text overflow */
+  }
+
+  /* Decrease font size in service card headings and paragraphs */
+  .service-card h3 {
+    font-size: 1.4rem;
+  }
+  .service-card p {
+    font-size: 0.95rem; /* or 1rem, depending on your preference */
+    line-height: 1.4;
+    /* Helps break long words instead of overflowing */
+    overflow-wrap: break-word; 
+  }
+}
+
+
+
   
