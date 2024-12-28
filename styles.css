@@ -18,9 +18,9 @@
   }
   
   .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    max-width:auto;
+    margin: 5rem, auto;
   }
   
   h2 {
@@ -67,6 +67,7 @@
   }
   
   .navbar .container {
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -80,6 +81,7 @@
   }
   
   .nav-links {
+    margin-right: 1rem;
     list-style: none;
     display: flex;
     gap: 2rem;
@@ -239,21 +241,21 @@
 /* ------------------------------------------------- */
 
 .about-section {
-  padding: 5rem 0;
+  padding: 5rem;
   background: linear-gradient(to bottom, #004e92, #000428);
 
   /* This part was "new" in your code: */
-  width: 100%;
-  max-width:fit-content;
-  margin: 0 auto;
+  width:auto;
+  max-width:max-content;
+  margin: 5px, auto;
   line-height: 1.6;
 }
 
 .about-content {
   display: flex;
   align-items: center;
-  gap: 4rem;
-  flex-wrap: wrap;
+  gap: 0rem;
+  flex-wrap:wrap;
   justify-content: center;
 }
 
@@ -270,6 +272,8 @@
 }
 
 .about-text p {
+    margin:20px,auto;
+    text-wrap:wrap;
   font-size: 1.2rem;
   line-height: 1.8;
   color: #f5f5f5;
@@ -289,7 +293,7 @@
   /* float: right; */
   margin-left: 1rem;
   margin-bottom: 0.5rem;
-  max-width: 250px;
+  max-width: 450px;
   height: auto;
   border-radius: 5px;
 
@@ -329,7 +333,7 @@
   /* ------------------------------------------------- */
   
   .services-section {
-    padding: 5rem 0;
+    padding: 5rem;
     background: linear-gradient(to bottom, #000428, #004e92);
   }
   
@@ -387,7 +391,7 @@
 /*      Projects Section     */
 /* ------------------------- */
 .projects-section {
-    padding: 5rem 0;
+    padding: 5rem;
     background: linear-gradient(to bottom, #004e92, #000428);
   }
   
