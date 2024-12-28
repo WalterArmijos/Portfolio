@@ -234,99 +234,95 @@
     }
   }
   
-  /* ------------------------------------------------- */
-  /*               About Section                       */
-  /* ------------------------------------------------- */
-  
-  .about-section {
-    padding: 5rem 0;
-    background: linear-gradient(to bottom, #004e92, #000428);
-/*     new */
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-/*       new  */
-}
-  }
-  
-  .about-content {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .about-text {
-    flex: 1;
-    min-width: 300px;
-    text-align: left;
-  }
-  
-  .about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #fff;
-  }
-  
-  .about-text p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #f5f5f5;
-  }
-  
-  .about-image {
-    flex: 1; 
-    min-width: 300px; 
-    display: flex; 
-    justify-content: center;
+ /* ------------------------------------------------- */
+/*               About Section                       */
+/* ------------------------------------------------- */
 
-}
-  }
-  
-  .about-image img {
-/*     width: 100%;
-    max-width: 450px; */
-/*     border-radius: 15px; */
-/*     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out; */
+.about-section {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, #004e92, #000428);
 
-/* new  */
-      float: right;             /* or "float: left" if you prefer the photo on the left */
-  margin-left: 1rem;        /* space between the text and the image */
-  margin-bottom: 0.5rem;    /* some space below the image */
-  max-width: 250px;         /* limit the width so it doesn't overtake the page */
+  /* This part was "new" in your code: */
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #f5f5f5;
+}
+
+.about-image {
+  flex: 1; 
+  min-width: 300px; 
+  display: flex; 
+  justify-content: center;
+}
+
+.about-image img {
+  /* If you truly want text to wrap around the image, 
+     you might not combine float with a flex layout— 
+     but here’s your float-based approach: */
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  max-width: 250px;
   height: auto;
-  border-radius: 5px;       /* optional styling, e.g., rounded corners */
+  border-radius: 5px;
 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
 
-         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 3rem 1rem;
   }
-  
-  .about-image img:hover {
-    transform: scale(1.05);
+  .about-content {
+    flex-direction: column;
+    gap: 2rem;
   }
-  
-  @media (max-width: 768px) {
-    .about-section {
-      padding: 3rem 1rem;
-    }
-    .about-content {
-      flex-direction: column;
-      gap: 2rem;
-    }
-    .about-text h2 {
-      font-size: 2rem;
-    }
-    .about-text p {
-      font-size: 1.1rem;
-    }
-    .about-image img {
-      max-width: 90%;
-    }
+  .about-text h2 {
+    font-size: 2rem;
   }
+  .about-text p {
+    font-size: 1.1rem;
+  }
+  .about-image img {
+    max-width: 90%;
+    float: none; /* remove float on mobile if desired */
+    margin: 0 auto;
+  }
+}
+
   
   /* ------------------------------------------------- */
   /*               Services Section                    */
