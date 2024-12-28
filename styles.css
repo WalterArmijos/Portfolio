@@ -277,17 +277,11 @@
   }
   
   .about-image {
-/*     flex: 1; */
-/*     min-width: 300px; */
-/*     display: flex; */
-/*     justify-content: center; */
-/*       new  */
-      float: right;             /* or "float: left" if you prefer the photo on the left */
-  margin-left: 1rem;        /* space between the text and the image */
-  margin-bottom: 0.5rem;    /* some space below the image */
-  max-width: 250px;         /* limit the width so it doesn't overtake the page */
-  height: auto;
-  border-radius: 5px;       /* optional styling, e.g., rounded corners */
+    flex: 1; 
+    min-width: 300px; 
+    display: flex; 
+    justify-content: center;
+
 }
   }
   
