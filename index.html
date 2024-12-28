@@ -1,590 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walter | Marketing Consultant / SaaS BDR </title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        /* Reset and Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Roboto, sans-serif;
-            background: linear-gradient(to bottom, #000428, #004e92);
-            color: #f5f5f5;
-            font-size: 1.2rem
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        p{
-            font-family: Roboto, sans-serif;
-            font-size: 1.3rem ;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h2 {
-            font-family: 'Poppins', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-          h6 {
-            font-family: 'Poppins', serif;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem 0;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-        }
-
-        .navbar .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand-logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffff;
-            align-items: left;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #ffff;
-            font-family: Lato;
-            text-decoration: none;
-            font-weight: 400;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #00b4d8;
-        }
-        /* Hamburger Menu Styles */
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-    }
-
-    .hamburger span {
-        background: #ffff;
-        height: 3px;
-        width: 25px;
-        margin: 3px;
-        transition: all 0.3s ease;
-    }
-
-    @media (max-width: 768px) {
-        .nav-links {
-            display: none;
-            flex-direction: column;
-            background: rgba(0, 0, 0, 0.9);
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 100%;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        .nav-links.active {
-            display: flex;
-        }
-
-        .hamburger {
-            display: flex;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-    }
-
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(to bottom, #000428, #004e92);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-content h1 {
-            font-family: 'Poppins', serif;
-            font-size: 4rem;
-            color: #ffff;
-            margin-bottom: 1rem;
-            animation: fadeIn 2s ease-in;
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeIn 2.5s ease-in;
-        }
-
-        .cta-button {
-            padding: 1rem 2rem;
-            background-color: #f68b07;
-            color: #ffff;
-            border: none;
-            border-radius: 25px;
-            font-family: Poppins;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #0077b6;
-            transform: translateY(-5px);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            text-align: center;
-        }
-
-        .scroll-indicator span {
-            font-size: 1.2rem;
-            font-family: Lato, Arial, Helvetica, sans-serif;
-        }
-
-        .scroll-line {
-            width: 2px;
-            height: 50px;
-            margin: 0.5rem auto;
-            background-color: white;
-            animation: scroll 1.5s infinite;
-        }
-
-        @keyframes scroll {
-            0% {
-                height: 10px;
-            }
-            50% {
-                height: 50px;
-            }
-            100% {
-                height: 10px;
-            }
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 5rem 0;
-            background: linear-gradient(to bottom, #004e92, #000428);
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width:300px;
-            text-align:left;
-        }
-
-        .about-text h2 {
-            font-family: 'Poppins', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .about-text p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            max-width: 450px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease-in-out;
-        }
-        .about-image img:hover {
-        transform: scale(1.05);
-    }
-
-    @media (max-width: 768px) {
-        .about-section {
-            padding: 3rem 1rem;
-        }
-
-        .about-content {
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .about-text {
-            text-align: left;
-        }
-
-        .about-text h2 {
-            font-size: 2rem;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-        }
-
-        .about-image img {
-            max-width: 90%;
-        }
-    }
-
-        /* Services Section */
-        .services-section {
-            padding: 5rem 0;
-            background: linear-gradient(to bottom, #000428, #004e92);
-        }
-        .service-card:active {
-            font-size: 1.3rem;
-            font-family: Roboto;
-        }
-        
-
-     .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 2rem;
-    padding: 2rem;
-}
-
-        .service-card {
-            background: #1a1a1a;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #00b4d8;
-        }
-
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            font-size: 1rem;
-            color: #dddddd;
-        }
-
-        /* Projects Section */
-        .projects-section {
-            padding: 5rem 0;
-            background: linear-gradient(to bottom, #004e92, #000428);
-        }
-
-        .projects-grid {
-            display: flex;
-            flex-wrap: wrap;
-            grid-template-columns: repeat(2, 2fr);
-            gap: 20px;
-            justify-content: space-between;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            flex: 1 1 calc(33.333%-20px);
-            box-sizing: border-box;
-            padding:10px;
-            position: relative;
-                
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
-        }
-        .image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-}
-
-.responsive-image {
-  max-width: 100%;
-  height: auto;
-}
-
-
-        .project-card img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover img {
-            transform: scale(1.1);
-        }
-        .project-card img.responsive-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            color: #ffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .project-card:hover .project-overlay {
-            opacity:1.5;
-        }
-
-        .project-overlay h3 {
-            font-family: Lato;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-overlay p {
-            font-family: Lato;
-            line-height:1.5;
-            font-size: 1.2rem;
-            padding: 1% 2%;
-        }
-        .responsive-text {
-  font-size: clamp(1rem, 2vw + 1rem, 3rem);
-  line-height: 1.5;
-}
-        .project-overlay a {
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: #00b4d8;
-            color: #ffff;
-            text-decoration: none;
-         border-radius: 5px;
-        transition: background-color 0.3s;
-        }
-
-        .project-overlay a: hover {
-        background-color: #0077b6;
-        }
-        @media (max-width: 768px) {
-    .project-card {
-        flex: 1 1 100%; /* Full width on mobile screens */
-    }
-}
-        @media (max-width: 768px) {
-    /* Adjust project card on mobile */
-    .project-card {
-        position: relative;
-        overflow: visible;
-        margin-bottom: 2rem; /* Add spacing between cards if needed */
-    }
-
-    .project-card img {
-        width: 100%;
-        height: auto;
-        transition: none;
-    }
-
-    .project-card:hover img {
-        transform: none;
-    }
-
-    .project-overlay {
-        position: static;
-        opacity: 1;
-        background: none;
-        color: #ffff;
-        padding: 1rem 0;
-        text-align: center;
-    }
-
-    .project-card:hover .project-overlay {
-        opacity: 1;
-    }
-
-    /* Optional: Adjust text size for readability on small screens */
-    .project-overlay h3 {
-        font-size: 1.5rem;
-    }
-
-    .project-overlay p {
-        font-size: 1rem;
-    }
-
-    /* Ensure the projects grid displays one column on mobile */
-    .projects-grid {
-        flex-direction: column;
-    }
-}
-
-
-
-        /* Contact Section */
-
-        .contact-section {
-            padding: 5rem 0;
-            background: linear-gradient(to bottom, #000428, #004e92);
-            text-align: center;
-
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            border: none;
-            border-radius: 5px;
-            background-color: #f5f5f5;
-            color: #333;
-            font-size: 1rem;
-            outline: none;
-        }
-
-        .submit-button {
-            padding: 1rem;
-            background-color: #f68b07;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .submit-button:hover {
-            background-color: #0077b6;
-            transform: translateY(-5px);
-        }
-
-        /* Footer Section */
-        .footer {
-            padding: 2rem 0;
-            background: linear-gradient(to bottom, #004e92, #000428);
-            text-align: center;
-        }
-
-        .footer p {
-            margin-bottom: 1rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-
-        .social-links a {
-            color: #00b4d8;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #0077b6;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Walter | Marketing Consultant / SaaS BDR</title>
+    
+    <!-- Combined Google Fonts import -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@300;400&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Consolidated CSS -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <header class="hero">
-        <nav class="navbar">
+    <header class="hero" role="banner">
+        <nav class="navbar" role="navigation">
             <div class="container">
                 <div class="brand-logo">Walter Armijos</div>
-                <ul class="nav-links" id= "nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -592,15 +28,16 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </nav>
+
         <div class="hero-content container">
-            <h1>Driving Business Growth Through Strategic Marketing & Sales</h1>
-            <p> Spreadsheets to Handshakes</p>
+            <h1>Driving Business Growth Through Strategic Marketing &amp; Sales</h1>
+            <p>Spreadsheets to Handshakes</p>
             <a href="#contact" class="cta-button">Let's Work Together</a>
         </div>
         <div class="scroll-indicator">
@@ -608,154 +45,273 @@
             <div class="scroll-line"></div>
         </div>
     </header>
-    
 
-    <section id="about" class="section about-section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>
-                        Hi there! I'm Walter Armijos. <br> I'm an NYU Stern graduate with four years of experience driving growth for SMBs through strategic sales and marketing plan execution. <br> Currently sharpening my expertise as a BDR in SaaS, I combine sales optimization with creative marketing to help businesses scale. Preparing businesses for tomorrow by harnessing AI today- I blend proven marketing strategies with emerging tech to give SMBs a competitive edge in the AI revolution.<br> 
-<br>
-                        Over the past four years, I've leveraged my digital strategy and brand development expertise to drive business growth and revenue. I've helped organizations optimize their market presence and connect with target audiences by crafting compelling narratives and strategic solutions. <br> My consultative approach focuses on understanding each client's unique value proposition to deliver measurable results and enhance their competitive advantage. My experience in strategic communication and relationship building has positioned me to excel in identifying and nurturing high-value opportunities in the SaaS space.
-
-                    </p>
-                </div>
-                <div class="about-image">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/vl6g90zdgtrcu6nurqp09/c5a40c3e-015e-470d-aa8a-f7d3dfcfa5ba.jpeg?rlkey=9g5iwa2hhmtx4vu9q58ehqi5y&st=zawzw8bc&" alt="Walter's portrait"class="responsive-image" >
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="section services-section">
-        <div class="container">
-            <h2>What I Do</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        👨‍💻
+    <main role="main">
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Me</h2>
+                        <p>
+                            Hi there! I'm Walter Armijos. <br />
+                            I'm an NYU Stern graduate with four years of experience driving
+                            growth for SMBs through strategic sales and marketing plan
+                            execution. <br />
+                            Currently sharpening my expertise as a BDR in SaaS, I combine
+                            sales optimization with creative marketing to help businesses
+                            scale. Preparing businesses for tomorrow by harnessing AI
+                            today- I blend proven marketing strategies with emerging tech
+                            to give SMBs a competitive edge in the AI revolution.
+                            <br /><br />
+                            Over the past four years, I've leveraged my digital strategy
+                            and brand development expertise to drive business growth and
+                            revenue. I've helped organizations optimize their market
+                            presence and connect with target audiences by crafting
+                            compelling narratives and strategic solutions. <br />My
+                            consultative approach focuses on understanding each client's
+                            unique value proposition to deliver measurable results and
+                            enhance their competitive advantage. My experience in
+                            strategic communication and relationship building has
+                            positioned me to excel in identifying and nurturing high-value
+                            opportunities in the SaaS space.
+                        </p>
                     </div>
-                    <h3>Web Design</h3>
-                    <p>Engaging, responsive websites tailored to brands' stories. I create digital homes and conversion tools for brands that are functional and memorable.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        🌟
-                    </div>
-                    <h3>Branding</h3>
-                    <p>Every brand has a story worth telling. I work with brands to develop a cohesive brand identity that resonates with a desired target audience and sets them apart from the competition.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        🖥️
-                    </div>
-                    <h3>SEO Strategy</h3>
-                    <p>Visibility is key. I work with brands to ensure they reach their audience through effective SEO and targeted digital strategies.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        ♟️
-                    </div>
-                    <h3>Strategic Outreach</h3>
-                    <p>Building meaningful connections through data-driven prospecting and personalized communication. I identify and engage high-value opportunities using both AI-powered tools and human insight.</p>
-                </div>
-
-                 <div class="service-card">
-                    <div class="service-icon">
-                        ♺
-                    </div>
-                    <h3>Pipeline Generation</h3>
-                    <p>Converting prospects into opportunities through consultative selling and deep market understanding. I help businesses identify pain points and match them with transformative solutions.</p>
-                </div>
-
-                  <div class="service-card">
-                    <div class="service-icon">
-                       🤲
-                    </div>
-                    <h3>Solution Consulting</h3>
-                    <p>Conducting powerful demos and discovery calls that showcase value. I bridge technical capabilities with business needs to help companies envision their AI-enabled future.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <h2>Featured Projects</h2>
-        
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/0p709ygn917wpu38hgtyi/Screenshot-2024-10-15-at-9.32.38-PM.jpg?rlkey=mayi9pcsbdy0l6cnayqtoohld&st=3rkvb8f0&" alt="Esthelas Cleaning Service" class="responsive-image">
-                    <div class="project-overlay">
-                        <h3>ECS</h3>
-                        <p class= "responsive-text" >A clean and user-friendly website that showcases this NJ-based residential cleaning company's services while improving their lead conversion significantly.</p>
-                        <a href="https://esthelascleaningservice.com" target="_blank">View Project</a>
-                    </div>     
-                </div>
-                <div class="project-card">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/lktnyn3bnx3zzgany0klq/Screenshot-2024-10-15-at-9.33.45-PM.jpg?rlkey=flwblkl7p6gddeaf1mst0edn4&st=1bjws10h&" alt="Growth Springs Eternal"class="responsive-image">
-                    <div class="project-overlay">
-                        <h3>GSE Learning</h3>
-                        <p>A visually engaging site that emphasizes expertise and builds trust for prospective clients looking for professional development guidance.</p>
-                        <a href="https://tinyurl.com/GSELearning" target="_blank">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/w2dnmgh3y8nh0nnjkarc7/Screenshot-2024-10-15-at-9.36.32-PM.jpg?rlkey=chjc0or0tgpmtxk57rcs4uucj&st=gxqemda7&"class="responsive-image">
-                    <div class="project-overlay">
-                        <h3>Portfolio</h3>
-                        <p>A bold and visually immersive portfolio that showcases the extraordinary talent and work ethic of an NYU Tisch Alumni. </p>
-                        <a href="https://annethpaoladavis.wixstudio.io/annethpaoladavis" target="_blank">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://dl.dropboxusercontent.com/scl/fi/n9dffjp2gogpxgz60n4r9/Screenshot-2024-10-15-at-9.33.07-PM.jpg?rlkey=h0b7yua2hrmtycx705kbh6z7c&st=hfejfv6j&" alt="NYU Insider's Guide"class="responsive-image">
-                    <div class="project-overlay">
-                        <h3>NYU Insider's Guide</h3>
-                        <p>A student-centric website and blog full of resources and tips for navigating college life at NYU. (Work in progress)</p>
-                        <a href="https://www.nyuinsidersguide.com" target="_blank">View Project</a>
+                    <div class="about-image">
+                        <!-- Lazy loading and improved alt text -->
+                        <img
+                          src="https://dl.dropboxusercontent.com/scl/fi/vl6g90zdgtrcu6nurqp09/c5a40c3e-015e-470d-aa8a-f7d3dfcfa5ba.jpeg?rlkey=9g5iwa2hhmtx4vu9q58ehqi5y&st=zawzw8bc&"
+                          alt="Walter's portrait smiling outdoors"
+                          class="responsive-image"
+                          loading="lazy"
+                        />
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p> Looking for energy, creativity, and strategic thinking for your brand?<br> Let's connect!<br></p> <p>Fill out the form below, and let's start building something great together.</p>
-            <form action="https://formspree.io/f/mdkoopyr" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
-        </div>
-    </section>
+        <section id="services" class="section services-section">
+            <div class="container">
+                <h2>What I Do</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">👨‍💻</div>
+                        <h3>Web Design</h3>
+                        <p>
+                            Engaging, responsive websites tailored to brands' stories. I
+                            create digital homes and conversion tools for brands that are
+                            functional and memorable.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌟</div>
+                        <h3>Branding</h3>
+                        <p>
+                            Every brand has a story worth telling. I work with brands to
+                            develop a cohesive brand identity that resonates with a
+                            desired target audience and sets them apart from the
+                            competition.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🖥️</div>
+                        <h3>SEO Strategy</h3>
+                        <p>
+                            Visibility is key. I work with brands to ensure they reach
+                            their audience through effective SEO and targeted digital
+                            strategies.
+                        </p>
+                    </div>
 
-    <footer class="footer">
+                    <div class="service-card">
+                        <div class="service-icon">♟️</div>
+                        <h3>Strategic Outreach</h3>
+                        <p>
+                            Building meaningful connections through data-driven
+                            prospecting and personalized communication. I identify and
+                            engage high-value opportunities using both AI-powered tools
+                            and human insight.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">♺</div>
+                        <h3>Pipeline Generation</h3>
+                        <p>
+                            Converting prospects into opportunities through consultative
+                            selling and deep market understanding. I help businesses
+                            identify pain points and match them with transformative
+                            solutions.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🤲</div>
+                        <h3>Solution Consulting</h3>
+                        <p>
+                            Conducting powerful demos and discovery calls that showcase
+                            value. I bridge technical capabilities with business needs to
+                            help companies envision their AI-enabled future.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img
+                          src="https://dl.dropboxusercontent.com/scl/fi/0p709ygn917wpu38hgtyi/Screenshot-2024-10-15-at-9.32.38-PM.jpg?rlkey=mayi9pcsbdy0l6cnayqtoohld&st=3rkvb8f0&"
+                          alt="Esthelas Cleaning Service website screenshot"
+                          class="responsive-image"
+                          loading="lazy"
+                        />
+                        <div class="project-overlay">
+                            <h3>ECS</h3>
+                            <p class="responsive-text">
+                                A clean and user-friendly website that showcases this
+                                NJ-based residential cleaning company's services while
+                                improving their lead conversion significantly.
+                            </p>
+                            <a href="https://esthelascleaningservice.com" target="_blank"
+                              >View Project</a
+                            >
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img
+                          src="https://dl.dropboxusercontent.com/scl/fi/lktnyn3bnx3zzgany0klq/Screenshot-2024-10-15-at-9.33.45-PM.jpg?rlkey=flwblkl7p6gddeaf1mst0edn4&st=1bjws10h&"
+                          alt="Growth Springs Eternal website screenshot"
+                          class="responsive-image"
+                          loading="lazy"
+                        />
+                        <div class="project-overlay">
+                            <h3>GSE Learning</h3>
+                            <p>
+                                A visually engaging site that emphasizes expertise and
+                                builds trust for prospective clients looking for
+                                professional development guidance.
+                            </p>
+                            <a
+                              href="https://tinyurl.com/GSELearning"
+                              target="_blank"
+                              >View Project</a
+                            >
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img
+                          src="https://dl.dropboxusercontent.com/scl/fi/w2dnmgh3y8nh0nnjkarc7/Screenshot-2024-10-15-at-9.36.32-PM.jpg?rlkey=chjc0or0tgpmtxk57rcs4uucj&st=gxqemda7&"
+                          alt="Portfolio site screenshot"
+                          class="responsive-image"
+                          loading="lazy"
+                        />
+                        <div class="project-overlay">
+                            <h3>Portfolio</h3>
+                            <p>
+                                A bold and visually immersive portfolio that showcases the
+                                extraordinary talent and work ethic of an NYU Tisch
+                                Alumni.
+                            </p>
+                            <a
+                              href="https://annethpaoladavis.wixstudio.io/annethpaoladavis"
+                              target="_blank"
+                              >View Project</a
+                            >
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img
+                          src="https://dl.dropboxusercontent.com/scl/fi/n9dffjp2gogpxgz60n4r9/Screenshot-2024-10-15-at-9.33.07-PM.jpg?rlkey=h0b7yua2hrmtycx705kbh6z7c&st=hfejfv6j&"
+                          alt="NYU Insider's Guide website screenshot"
+                          class="responsive-image"
+                          loading="lazy"
+                        />
+                        <div class="project-overlay">
+                            <h3>NYU Insider's Guide</h3>
+                            <p>
+                                A student-centric website and blog full of resources and
+                                tips for navigating college life at NYU. (Work in progress)
+                            </p>
+                            <a
+                              href="https://www.nyuinsidersguide.com"
+                              target="_blank"
+                              >View Project</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <p>
+                    Looking for energy, creativity, and strategic thinking for your
+                    brand?<br />
+                    Let's connect!<br />
+                </p>
+                <p>
+                    Fill out the form below, and let's start building something great
+                    together.
+                </p>
+                <form
+                  action="https://formspree.io/f/mdkoopyr"
+                  method="POST"
+                  class="contact-form"
+                >
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Your Email"
+                      required
+                    />
+                    <textarea
+                      name="message"
+                      placeholder="Your Message"
+                      rows="5"
+                      required
+                    ></textarea>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <p>&copy; 2024 Walter Armijos. All Rights Reserved.</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/wsap/">LinkedIn</a>
                 <a href="https://i6.cims.nyu.edu/~wa2054/me/">More About Me</a>
-                <!-- <a href="#">Twitter</a> -->
             </div>
         </div>
     </footer>
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
 
-        hamburger.addEventListener('click', () => {
-            // Toggle 'active' class on hamburger and nav-links
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
+    <!-- Using defer for performance -->
+    <script defer>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+
+      // Close the menu automatically when a user clicks a nav link
+      const navLinkElements = navLinks.querySelectorAll("a");
+      navLinkElements.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (hamburger.classList.contains("active")) {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+          }
         });
+      });
     </script>
 </body>
-
 </html>
