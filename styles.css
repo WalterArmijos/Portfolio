@@ -292,10 +292,22 @@
   }
   
   .about-image img {
-    width: 100%;
-    max-width: 450px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+/*     width: 100%;
+    max-width: 450px; */
+/*     border-radius: 15px; */
+/*     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out; */
+
+/* new  */
+      float: right;             /* or "float: left" if you prefer the photo on the left */
+  margin-left: 1rem;        /* space between the text and the image */
+  margin-bottom: 0.5rem;    /* some space below the image */
+  max-width: 250px;         /* limit the width so it doesn't overtake the page */
+  height: auto;
+  border-radius: 5px;       /* optional styling, e.g., rounded corners */
+
+
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease-in-out;
   }
   
