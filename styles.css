@@ -308,9 +308,15 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .about-section {
+    .about-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* centers image, paragraphs, button */
+        text-align: center;  /* centers text content */
+      }
+  /* .about-section {
     padding: 3rem 1rem;
-  }
+  } */
   .about-content {
     flex-direction: column;
     gap: 2rem;
@@ -322,9 +328,10 @@
     font-size: 1.1rem;
   }
   .about-image img {
-    max-width: 90%;
-    float: none; /* remove float on mobile if desired */
-    margin: 0 auto;
+    max-width: 200px;     /* Scale down for mobile */
+    border-radius: 50%;   /* Circle shape */
+    border: 2px solid #000; /* Adjust color/thickness as desired */
+    margin: 1rem 0;
   }
 }
 
@@ -378,6 +385,10 @@
   }
   
   @media (max-width: 768px) {
+    .service-card {
+        width: 90%;  /* Expand to nearly full width */
+        margin: 0 auto 1rem;
+      }
     .services-grid {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
@@ -597,9 +608,9 @@
 
   /* Centering container */
 .center-btn {
- display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   /* Optional: create a special LinkedIn button style */
