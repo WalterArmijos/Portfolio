@@ -321,7 +321,10 @@ main {
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
+    background: #1a1a1a;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
   
   .project-card img {
@@ -355,7 +358,41 @@ main {
   .project-card:hover .project-overlay {
     opacity: 1;
   }
+  .project-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
   
+  .project-overlay p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .project-overlay a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #00b4d8;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .project-overlay a:hover {
+    background-color: #0077b6;
+  }
+
+  @media (max-width: 768px) {
+    .project-card {
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-overlay {
+      position: static;
+      opacity: 1;
+    }
+  }
   /* ------------------------------------------------- */
   /*               Contact Section                     */
   /* ------------------------------------------------- */
